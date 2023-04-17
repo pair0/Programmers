@@ -5,9 +5,8 @@ def solution(targets):
 
     for s, e in targets:
         # 이전에 요격한 미사일로는 현재 미사일을 요격할 수 없는 경우
-        # 개구간이기 때문에 크기가 크거나 같은 것으 요격할 수 없다.
-        if s >= end:
+        if s > end:
             answer += 1
-            end = e  # 현재 미사일을 요격함으로써 끝나는 지점을 업데이트
+            end = e - 1  # 현재 미사일을 요격함으로써 끝나는 지점을 업데이트, 개구간이므로 -1
 
     return answer

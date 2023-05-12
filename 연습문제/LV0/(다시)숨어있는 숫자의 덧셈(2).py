@@ -15,3 +15,13 @@ def solution(my_string):
     if temp != '':
         answer += int(temp)
     return answer
+
+
+# 더 나은 풀이
+def solution(my_string):
+    for i in my_string:
+        if i.isalpha():  # 알파벳일 때 공백으로 변환
+            my_string = my_string.replace(i, ' ')
+    my_string = my_string.split()  # 공백 기준으로 자르기
+
+    return sum(list(map(int, my_string)))
